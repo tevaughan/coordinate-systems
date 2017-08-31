@@ -11,14 +11,15 @@
 % Start the main matter (normal chapters)
 \mainmatter
 
-\chapter{Space}
-\label{ch:space}
+\chapter{Distance}
+\label{ch:distance}
 
 \newthought{A point}, as introduced in high-school geometry, is a particular,
 pure location, without any extent: no length, no width, no height.
 
-\newthought{Every other geometric thing}, such as the line, the plane, and the
-space, is introduced as merely a collection of points.
+\newthought{Every other geometric thing}, such as the line (one-dimensional
+space), the plane (two-dimensional space), and the proper space
+(three-dimensional space), is introduced as merely a collection of points.
 
 \bigskip
 Yet there is a problem that comes from imagining, say, a line segment as merely
@@ -26,21 +27,33 @@ a collection of points.  A line segment has length, but a point has no length.
 No point can touch another distinct point, and so points cannot simply lie in
 unbroken contact, such that their lengths add up to that of the segment.  In
 high-school physics, the student learns to do mathematical calculation with
-physical units.  One cannot add two quantities together if one have a unit of a
-kind different from that of the other quantity.\sidenote{%
-   For example, one cannot add a two kilograms and three meters.}
+physical units.  Two quantities cannot be added together if they differ in
+fundamental units, and if two quantities agree in unit, their sum must be
+expressible in terms of the same unit.\sidenote{%
+   For example, one cannot evaluate the sum of a distance and a mere number, as
+   in $3 \text{m} + 2$, where ``$\text{m}$'' indicates ``meter''. Also, the
+   result of $2 + 5$ cannot be $7 \text{m}$.}
 A point has no extent in meters, and so one cannot construct a line segment
 three meters long merely by adding points together.
 
 A solution to this problem is found in the calculus.  The length along a
-segment of a curve is the limit of an ever-increasing number of ever-smaller
-straight lengths along the curve.  The segment is divided into an infinite
-number of things, but each of these things is a length, not a point.  Even in
-the limit, each piece still has some length, though infinitesimally small, and
-so the pieces can be added together to produce a finite length.
+section of a curve is the limit of an ever-increasing number of ever-smaller,
+contiguous, straight segments along the curve and intersecting it at least at
+the endpoints of each segment.  The section is thereby divided into an infinite
+number of segments, but each segment has a length and is therefore not a point.
+Even in the limit, each segment still has some length, though infinitesimally
+small, and so the segments can be added together to produce a finite length.
+The fundamental unit in the addition is consistent.
 
 Similarly, a surface must be composed of bits with area, and a space must be
-composed of bits with volume.
+composed of bits with volume.  The idea of area and the idea of volume are
+built upon the idea of length, of distance.
+
+Regardless of the number of dimensions of length a space might have, it can
+support basic notions of geometry only if there be a unique \emph{distance}
+between every pair of points in the space.  A line is not merely a collection
+of points but also a rule for associating a distance between every pair of
+points on the line.
 
 \section{Distance and Path}
 
@@ -55,8 +68,8 @@ composed of bits with volume.
 
 \input{fdl-1.3}
 
-%\bibliography{sample-handout}
-%\bibliographystyle{plainnat}
+\bibliography{my}
+\bibliographystyle{plainnat}
 
 \printindex
 

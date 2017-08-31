@@ -11,14 +11,17 @@
 \openepigraph{%
 Wheeeeeeeeeeeeeeeeeeee.
 }{%
-Neil Huffaker, on arriving at a conclusion at the board during a lecture
+Neil Huffaker, when writing an interesting mathematical result onto the board
+during a lecture
 }
 \vfill
 \openepigraph{%
 Well, that's unfortunate.
 }{%
-Jack Cohn, after deriving the wrong result at the board during a lecture
+Jack Cohn, when---after a long, difficult, and messy attempt at a derivation on
+the board---arriving at the wrong result during a lecture
 }
+\vfill
 
 % r.3 full title page
 \maketitle
@@ -59,10 +62,9 @@ Copyright \copyright\ \the\year\ \thanklessauthor
 \begin{doublespace}
 \noindent\fontsize{18}{22}\selectfont\itshape
 \nohyphenation
-Dedicated to those who appreciate mathematical physics, and, in particular, to
-   \mbox{Neil Huffaker}, whose approach to vector mathematics is fascinating to
-   me, and to \mbox{Jack Cohn}, whose zeal for the finer points of mathematical
-   physics inspired me to learn some of them.
+Dedicated to \mbox{Neil Huffaker}, whose physical approach to vector
+   mathematics is fascinating, and to \mbox{Jack Cohn}, whose zeal for the
+   finer points of mathematical physics inspired me to learn some of them.
 \end{doublespace}
 \vfill
 \vfill
@@ -72,17 +74,78 @@ Dedicated to those who appreciate mathematical physics, and, in particular, to
 \cleardoublepage
 \chapter*{Prolegomenon}
 
-Herebelow is an introduction to the idea of a coordinate system.  Not purely
-mathematical, this treatment involves at least two key elements of physical
-theory.  In the first place, the idea of distance is not reduced to the idea of
-number.  Rather, distance remains an intuitive, undefined, physical,
-non-numeric quantity.  Nevertheless, this quantity can be multiplied by a
+The present book is an introduction to the idea of a coordinate system in the
+three-dimensional, physical space of ordinary experience.
+
+The subject matter touches on concepts in differential geometry but is aimed at
+the development of a consistent notation, both for the definition of a
+coordinate system and for the transformation of the coordinate-dependent
+components of a coordinate-free quantity.  I have been dissatisfied with the
+traditional approach and should like to expose ideas that Neil Huffaker
+introduced in his graduate lectures on electrodynamics at the University of
+Oklahoma in the early 1990s.  The material should be accessible to anyone who
+has studied calculus-based physics.
+
+The format of the book follows the style of Edward R.~Tufte and Richard
+Feynman\cite[-0.5in]{pkg-tufte}.
+
+Not purely mathematical, the treatment below involves at least two key elements
+of physical theory.  In the first place, the idea of distance is not reduced to
+the idea of number.  Rather, distance remains an intuitive, undefined,
+physical, non-numeric quantity, expressed in terms of a fundamental unit, such
+as the inch or the meter.  Nevertheless, this quantity can be multiplied by a
 number.  In the second place, neither a location in space nor a displacement
 vector between two points in space is reduced to an ordered set of quantities.
-Rather, each of the location and the vector is regarded as logically prior to
-and independent of any coordinate system.  Like physics in general, the
-treatment here is mathematical but not entirely of mathematics: Location,
-distance, and direction are physical realities amenable to mathematical
-description. Such a description can be tested by experiment, and some of the
-descriptions presented below have been ruled out by experiment.
+Rather, each of the location and the vector is regarded as simple, logically
+prior to any coordinate system, and independent of it.
+
+Like physics in general, the treatment is mathematical but not entirely of
+mathematics: Location, distance, and direction are physical realities amenable
+to mathematical description. Such a description can be tested by experiment,
+and some of the descriptions presented below have been ruled out by
+experiment.\sidenote[][-2.5in]{%
+   The Newtonian hypothesis, according to which the physical space-time of
+   ordinary experience is Euclidean, is ruled out by astronomical observation.
+   The occasional Newtonian prediction, of the observed result of an experiment
+   testing the effect of gravity, fails repeatably.  The measurement of the
+   deflection of the apparent direction toward a star near the Sun during an
+   eclipse in 1919 provides the initial example.  To the contrary, the
+   Einsteinian hypothesis, according to which space-time is non-Euclidean in a
+   certain way, has (so far) survived every experimental challenge.  Because it
+   is a scientific theory referring to things (like space-time curvature) that
+   can never be directly perceived by the senses, the Einsteinian hypothesis
+   can never be proved true, but the Newtonian hypothesis---and arguably every
+   hypothesis asserting the Euclidean nature of physical space-time---has been
+   ruled out.
+}
+Whereas a purely mathematical development cannot be ruled out by experiment, a
+mathematical hypothesis about physical reality can be ruled out.  What keeps
+the hypothesis from being purely mathematical is its reference to concrete
+physical quantities, such as distance, rather than only to abstractions, such
+as number, which in an explicitly physical treatment multiplies the physical
+quantity in order to scale it.
+
+David E.~Rowe\cite{Rowe2006} argues that one of the reasons why non-Euclidean
+geometry was difficult to accept at the beginning of the 20th Century is that
+geometry---Euclidean geometry---had long been commonly regarded as purely
+mathematical.  So no experiment could ever contradict it.
+
+While Euclidean geometry can in some sense be regarded as purely mathematical,
+what is not purely mathematical is the hypothesis according to which Euclid
+perfectly describes the geometry of physical space.  \emph{That} hypothesis has
+been tested and found wanting.  Euclidean geometry remains valid as an artifact
+of pure, mathematical reasoning from a small set of axioms.  However, when a
+distance in Euclidean geometry is interpreted as a physical distance, at least
+one of the axioms of Euclidean geometry is now known to be false.  Even in the
+non-Euclidean geometries of modern physics, the Euclidean ideal is a better and
+better approximation as the size of the region of space under consideration
+becomes smaller and smaller.  While Euclidean geometry as a physical hypothesis
+applied globally has been ruled out by experiment, Euclidean geometry as a
+physical hypothesis applied separately to every local region has not been ruled
+out.  That is why the space of general relativity is called ``a locally
+Euclidean space.''
+
+Most of the narrative of the book is set in the three-dimensional space of
+ordinary experience, but the non-Euclidean, two-dimensional space of the
+surface of the sphere is also explored.
 
