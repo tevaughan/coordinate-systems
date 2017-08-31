@@ -1,5 +1,5 @@
 
-coordsys.pdf : coordsys.tex
+coordsys.pdf : coordsys.tex preamble.tex front-matter.tex
 	pdflatex coordsys
 	bibtex coordsys
 	makeindex coordsys.idx
