@@ -7,7 +7,7 @@ LATEX_SRC =\
 
 coordsys.pdf : $(LATEX_SRC)
 	pdflatex coordsys
-	bibtex coordsys
+#	bibtex coordsys
 	makeindex coordsys.idx
 	pdflatex coordsys
 	pdflatex coordsys
