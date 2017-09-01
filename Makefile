@@ -9,6 +9,7 @@ coordsys.pdf : $(LATEX_SRC)
 	pdflatex coordsys
 	bibtex coordsys
 	makeindex coordsys.idx
+	asy coordsys-*.asy
 	pdflatex coordsys
 	pdflatex coordsys
 	pdflatex coordsys
@@ -16,10 +17,14 @@ coordsys.pdf : $(LATEX_SRC)
 .PHONY: clean
 
 clean :
-	@rm -fv coordsys.pdf
 	@rm -fv *.aux
 	@rm -fv *.bbl
 	@rm -fv *.blg
+	@rm -fv coordsys-*.asy
+	@rm -fv coordsys-*.pdf
+	@rm -fv coordsys.pdf
+	@rm -fv coordsys-*.pre
+	@rm -fv coordsys-*.tex
 	@rm -fv *.idx
 	@rm -fv *.ilg
 	@rm -fv *.ind
@@ -28,5 +33,6 @@ clean :
 	@rm -fv *.lot
 	@rm -fv *.out
 	@rm -fv *.out
+	@rm -fv *.pre
 	@rm -fv *.toc
 

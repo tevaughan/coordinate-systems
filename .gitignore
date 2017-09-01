@@ -1,5 +1,7 @@
 
 coordsys.pdf
+coordsys-?.asy
+coordsys-?.pdf
 
 ## Core latex/pdflatex auxiliary files:
 *.aux

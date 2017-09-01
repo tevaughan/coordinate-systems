@@ -74,59 +74,118 @@ Dedicated to \mbox{Neil Huffaker}, whose physical approach to vector
 \cleardoublepage
 \chapter*{Prolegomenon}
 
-In the present book, I introduce the idea of a coordinate system and discuss
-two different kinds of quantity:
-\begin{enumerate}
-   \item that which is independent of the choice of coordinate system and
-   \item that which depends on the choice of coordinate system.
-\end{enumerate}
-I focus mostly on the three-dimensional, physical space of ordinary experience.
+\begin{marginfigure}
+   \begin{center}
+   \begin{asy}
+      defaultpen(fontsize(8pt));
+      settings.prc = false;
+      size(2cm,0);
+      import three;
+      draw(unitsphere, white);
+      path3 equator = circle(c=O, r=1.001, normal=Z);
+      path3 par     = circle(c=O+1/sqrt(2)*Z, r=1/sqrt(2)+0.001, normal=Z);
+      path3 prime   = circle(c=O, r=1.001, normal=X);
+      path3 mer     = circle(c=O, r=1.001, normal=cos(30)*X+sin(30)*Y);
+      draw(equator, red);
+      draw(par, red);
+      draw(prime, yellow);
+      draw(mer, yellow);
+   \end{asy}
+   \end{center}
+   \caption{%
+      Every path of constant latitude on the sphere is called ``a parallel''
+      because no parallel intersects any other parallel.  Among the parallels,
+      only the equator is a great circle; that is, the parallel at zero
+      latitude is the only parallel circle centered on the center of the
+      sphere.  The equator and a northern parallel are shown.  In contrast,
+      every path of constant longitude is called ``a meridian'' and intersects
+      every other meridian, both at the north pole and at the south pole.
+      Also, every meridian is a great circle.  Two meridians are shown.%
+   }
+   \label{fig:sphere}
+\end{marginfigure}
 
-The subject matter touches on concepts in differential geometry and is aimed at
-the development of a consistent notation.  I define what a coordinate system is
-and, for a change of coordinate system, explore the transformation of a
-quantity that depends on the choice of coordinates.  I have been dissatisfied
-with the traditional approach and should like to expose ideas that Neil
-Huffaker introduced in his graduate lectures on electrodynamics at the
-University of Oklahoma in the early 1990s.  The material should be accessible
-to anyone who has studied calculus-based physics.
+The matter of the present book touches on concepts in differential geometry and
+is aimed at the development of a consistent notation.  I have been dissatisfied
+with the traditional approach transformations of Cartesian coordinates and
+should like to expose ideas that Neil Huffaker introduced in his graduate
+lectures on electrodynamics at the University of Oklahoma in the early 1990s.
+The material should be accessible to anyone who has studied calculus-based
+physics.
 
-The format of the book follows the style of Edward R.~Tufte and Richard
-Feynman \citep{pkg-tufte}.
+The form of the book follows the style of Edward R.~Tufte and Richard Feynman
+\citep{pkg-tufte}.
 
-The treatment below involves two key principles.  First, a distance is not
-reduced to a number; rather, distance remains an intuitive, undefined,
-physical, non-numeric quantity, expressed in terms of a fundamental unit, such
-as the inch or the meter.  Nevertheless, a distance can be multiplied by a
-number.  Second, neither a point in space nor a displacement vector between two
-points is reduced to an ordered set of quantities.  Rather, each of the point
-and the vector is regarded as both simple and logically prior to any coordinate
-system.
+\section{Coordinate}
 
-As a physical hypothesis, Euclidean geometry has been ruled out by
-experiment.\sidenote{%
-   At least a couple of experiments, including lunar ranging and Gravity Probe
-   B, have directly and repeatably measured the curvature of space near the
-   Earth. The results are inconsistent with Euclidean physical space.
-   \citep{gpb-2011, miller-geodetic}
+A \emph{coordinate} is an element of a simply ordered set,\sidenote[][0.1in]{%
+   A set $S$ is simply ordered if, for every $a, b, c \in S$,
+   \begin{enumerate}
+      \item $a \leq b$ and $b \leq a$ imply that $a = b$;
+      \item $a \leq b$ and $b \leq c$ imply that $a \leq c$; and
+      \item either $a \leq b$ or $b \leq a$.
+   \end{enumerate}%
 }
-Whereas a purely mathematical idea cannot be ruled out by experiment, a
-physical hypothesis can be ruled out.  What keeps an hypothesis from being
-purely mathematical is its reference to concrete physical quantities, such as
-distance, rather than only to abstractions, such as number.\sidenote{%
-   In an explicitly physical treatment, a number multiplies the physical
-   quantity in order to scale it.}
+which is mapped continuously and in a one-to-one way onto a path in a space.
+In mathematics, a coordinate is typically a real number.  For example, on the
+surface of a sphere, each of the latitude and the longitude is a coordinate.
+By holding the latitude fixed, one finds that the set of longitudes maps to a
+parallel, which is a path on the surface of the sphere.  See
+Figure~\ref{fig:sphere}.  In my treatment, which is physical and not purely
+mathematical, a coordinate is often not a number but a \emph{length}, an
+irreducibly physical quantity, which can be expressed as the product of a
+number and a standard unit (such as an inch).
 
-Euclidean geometry can, in a sense, be regarded as purely mathematical.  It
-remains valid as an artifact of mathematical reasoning applied to a small set
-of axioms, and it can be disconnected from physical space.  For example,
-distance can be made abstract, as by reducing it to the idea of number.
+\section{Coordinate System}
 
-What is not purely mathematical is the hypothesis according to which Euclid
-perfectly describes the geometry of physical space.  \emph{That} hypothesis has
-been tested and found wanting.  To apply Euclidean geometry to physical space
-is to contradict the results of experiment.
+A \emph{coordinate tuple} is an ordered set of coordinates.  For example,
+$(\alpha,\beta)$, where $\alpha$ is the latitude and $\beta$ the longitude, is
+a coordinate tuple identifying a point on the surface of a sphere.  A
+\emph{coordinate system} is a continuous, one-to-one, and onto mapping from a
+set of coordinate tuples to the points in a space.
 
+No particular coordinate system need be chosen for a given space, and so the
+choice of coordinate system is arbitrary.  However, one coordinate system might
+fit a space more naturally than another would fit it.  Also, there is a special
+kind of coordinate system, a \emph{Cartesian} coordinate system; not every
+space admits a Cartesian coordinate system.  In fact, only a \emph{Euclidean}
+space admits a Cartesian coordinate system.
+
+By defining a \emph{geodesic} in a space as the shortest path between two
+points, we shall show that changing any single Cartesian coordinate while
+holding the others fixed will produce a mapping onto a geodesic in the space.
+We shall also explore the idea of \emph{curvature} and show that a Euclidean
+space has zero curvature.
+
+We shall spend some time discussing the difference between a quantity that
+depends on the choice of coordinate system and a quantity that does not depend
+on the choice.  For a quantity that does depend on the coordinate system, we
+shall explore, particularly for Cartesian coordinates, the different ways in
+which a quantity can transform as the coordinate system changes.
+
+\section{Physical Space}
+
+My treatment will involve two key principles.  First, a distance is not reduced
+to a number; rather, distance remains an intuitive, undefined, physical,
+non-numeric quantity, expressed in terms of a fundamental unit, such as the
+inch or the meter.  Nevertheless, a distance can be multiplied by a number.
+Second, neither a point in space nor a displacement vector between two points
+is reduced to a tuple of quantities.  Rather, each of the point and the vector
+is regarded as both simple\footnote{%
+   What is simple is not composed of parts; that is, not complex.  A tuple of
+   coordinates is complex in the sense that it has parts.  Further, a
+   coordinate system may map this tuple to a point in a space, but the point
+   itself has no parts.  The point is simply a location.%
+}
+and logically prior to any coordinate system.
+
+As a global physical hypothesis, Euclidean geometry has been ruled out by
+experiment.\sidenote{%
+   Experiments in lunar ranging from the surface of the Earth and data from the
+   spacecraft, Gravity Probe B, have directly and repeatably measured the
+   curvature of space near the Earth. The results are inconsistent with
+   Euclidean physical space.  \citep{gpb-2011, miller-geodetic}
+}
 However, even in the non-Euclidean geometries of modern physics, the Euclidean
 ideal is a better and better approximation as the size of the region of space
 under consideration becomes smaller and smaller.  While Euclidean geometry as a
