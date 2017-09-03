@@ -1,4 +1,6 @@
 
+% vim: set tw=79 sw=3 expandtab:
+
 \documentclass[nobib]{tufte-book}
 
 \input{preamble}
@@ -17,34 +19,59 @@
 \newthought{A point}, as introduced in high-school geometry, is a particular,
 pure location, without any extent: no length, no width, no height.
 
-\newthought{In modern mathematics}, every other geometric thing, such as the
-line (one-dimensional space), the plane (two-dimensional space), and the proper
-space (three-dimensional space), is introduced as merely a collection of
-points.
-
-\bigskip
-Yet there is a problem that comes from imagining, say, a line segment as merely
-a collection of points.  A line segment has length, but a point has no length.
-No point can touch another distinct point, and so points cannot simply lie in
-unbroken contact, such that their lengths add up to that of the segment.  In
-high-school physics, the student learns to do mathematical calculation with
-physical units.  Two quantities cannot be added together if they differ in
-fundamental dimension, and if two quantities agree in dimension, their sum must
-be expressible in terms of the same unit.\sidenote{%
+There is a problem that can arise from imagining, say, a section of a curve as
+merely a collection of points.  A section of a curve has a length, but a point
+has no length.  No point can touch another distinct point, and so points cannot
+lie in unbroken contact, such that their lengths add up to that of the section.
+In high-school physics, the student learns to do mathematical calculation with
+physical dimensions.  Two quantities cannot be added together if they differ in
+dimension, and if two quantities agree in dimension, their sum must be of the
+same dimension.\sidenote[][-0.5in]{%
    For example, one cannot evaluate the sum of a distance and a mere number, as
-   in $3 \text{m} + 2$, where ``$\text{m}$'' indicates ``meter''. Also, the
-   result of $2 + 5$ cannot be $7 \text{m}$.}
-A point has exactly zero length, and so one cannot construct a line segment
-three meters long by adding up the width of every point.
+   in $3 \: \text{m}^2 + 2$, where ``$\text{m}$'' indicates ``meter''.  The
+   first term has the dimension of area, and the second term is dimensionless.
+   Also, the result of $2 + 5$ cannot be $7 \: \text{m}$.}
+A point has not extension in the dimension of length, and so even if two
+distinct points could touch, there is no way to add up any property in each
+point to result in a length.
 
-A solution to this problem is found in the calculus.  The length along a
-section of a curve is the limit of an ever-increasing number of ever-smaller,
-contiguous, straight segments along the curve and intersecting it at least at
-the endpoints of each segment.  The section is thereby divided into an infinite
-number of segments, but each segment has a length and is therefore not a point.
-Even in the limit, each segment still has some length, though infinitesimally
-small, and so the segments can be added together to produce a finite length.
-The dimension of the addends is the dimension of the sum.
+\begin{marginfigure}
+   \begin{center}
+   \begin{asy}
+      defaultpen(fontsize(8pt));
+      settings.prc = false;
+      size(4cm,0);
+      import three;
+      path3 a = arc(c=O, v1=X, v2=(Y-X)/sqrt(2));
+      draw(a);
+      draw(X--(cos(3*pi/8)*X+sin(3*pi/8)*Y)--(cos(3*pi/4)*X+sin(3*pi/4)*Y), blue);
+      draw(X--(cos(3*pi/16)*X+sin(3*pi/16)*Y)--(cos(3*pi/8)*X+sin(3*pi/8)*Y)--
+           (cos(9*pi/16)*X+sin(9*pi/16)*Y)--(cos(3*pi/4)*X+sin(3*pi/4)*Y), red);
+   \end{asy}
+   \end{center}
+   \caption{%
+      Convergence toward limiting length of arc.  The integral of the length
+      along the curved path is the limit of a sequence of approximate sums.
+      The sum of the red lengths is a better approximation than the sum of the
+      blue lengths. The claim made in the calculus is not that the smooth arc
+      is really composed of an infinite number of straight segments. That would
+      be a contradiction. A curve is not straight. Rather, the claim is that
+      the length of the curved arc is the limit of a sequence of sums of
+      contiguous, straight segments.  No sum of straight segments will in
+      general be equal to the length along the curve, but the limit of the
+      sequence of sums can be found.%
+   }
+   \label{fig:arc}
+\end{marginfigure}
+
+\newthought{A solution to this problem} is found in the calculus.  In physical
+space, there is a distance between any two distinct points.  The length of a
+section of a curve is the limit of the sum an ever-increasing number of
+ever-smaller distances, each between a pair of points on the curve.  In the
+limit, the section is divided into an infinite number of segments, but each
+segment has a length.  No matter how many segments there might be, each segment
+still has some length, and so the segments can be added together to produce a
+finite length.  The dimension of the addends is the dimension of the sum.
 
 Similarly, a surface must be composed of bits with area, and a space must be
 composed of bits with volume.  The idea of area and the idea of volume are
@@ -52,9 +79,9 @@ built upon the idea of length, of distance.
 
 Regardless of the number of dimensions of length a space might have, it can
 support basic notions of geometry only if there be a unique \emph{distance}
-between every pair of points in the space.  A line is not merely a collection
-of points but also a rule for associating a distance between every pair of
-points on the line.
+between every pair of points in the space.  A path through physical space is
+not merely a collection of points but also a rule for associating a distance
+between every pair of points on the path.
 
 \section{Distance and Path}
 
