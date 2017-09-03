@@ -17,21 +17,23 @@
 \label{ch:distance}
 
 \newthought{A point}, as introduced in high-school geometry, is a particular,
-pure location, without any extent: no length, no width, no height.
+pure location, without any extent: no length, no width, no height.  An object
+such as a curve, a surface, or a volume has points in it.
 
-There is a problem that can arise from imagining, say, a section of a curve as
-merely a collection of points.  A section of a curve has a length, but a point
-has no length.  No point can touch another distinct point, and so points cannot
-lie in unbroken contact, such that their lengths add up to that of the section.
-In high-school physics, the student learns to do mathematical calculation with
-physical dimensions.  Two quantities cannot be added together if they differ in
+There are, however, problems that can arise from imagining, say, a curve as
+\emph{merely} a collection of points.  A point has no length.  Two points could
+touch only if they were in the same location, but then they would be the same
+point.  So no two distinct points can be in contact.  There is no arrangement
+of points, lying in unbroken contact, such that they constitute a length.
+Also, in introductory physics, the student learns to involve physical dimension
+in calculation.  Two quantities cannot be added together if they differ in
 dimension, and if two quantities agree in dimension, their sum must be of the
-same dimension.\sidenote[][-0.5in]{%
+same dimension.\sidenote[][-1in]{%
    For example, one cannot evaluate the sum of a distance and a mere number, as
    in $3 \: \text{m}^2 + 2$, where ``$\text{m}$'' indicates ``meter''.  The
    first term has the dimension of area, and the second term is dimensionless.
    Also, the result of $2 + 5$ cannot be $7 \: \text{m}$.}
-A point has not extension in the dimension of length, and so even if two
+A point has no extension in the dimension of length, and so even if two
 distinct points could touch, there is no way to add up any property in each
 point to result in a length.
 
@@ -42,46 +44,54 @@ point to result in a length.
       settings.prc = false;
       size(4cm,0);
       import three;
-      path3 a = arc(c=O, v1=X, v2=(Y-X)/sqrt(2));
+      real step = 3*pi/16;
+      triple p0 = cos(0*step)*X + sin(0*step)*Y;
+      triple p1 = cos(1*step)*X + sin(1*step)*Y;
+      triple p2 = cos(2*step)*X + sin(2*step)*Y;
+      triple p3 = cos(3*step)*X + sin(3*step)*Y;
+      triple p4 = cos(4*step)*X + sin(4*step)*Y;
+      path3 a = arc(c=O, v1=p0, v2=p4);
+      currentprojection=orthographic(camera=Z);
       draw(a);
-      draw(X--(cos(3*pi/8)*X+sin(3*pi/8)*Y)--(cos(3*pi/4)*X+sin(3*pi/4)*Y), blue);
-      draw(X--(cos(3*pi/16)*X+sin(3*pi/16)*Y)--(cos(3*pi/8)*X+sin(3*pi/8)*Y)--
-           (cos(9*pi/16)*X+sin(9*pi/16)*Y)--(cos(3*pi/4)*X+sin(3*pi/4)*Y), red);
+      draw(p0--p2--p4, blue);
+      draw(p0--p1--p2--p3--p4, red);
    \end{asy}
    \end{center}
    \caption{%
       Convergence toward limiting length of arc.  The integral of the length
       along the curved path is the limit of a sequence of approximate sums.
-      The sum of the red lengths is a better approximation than the sum of the
-      blue lengths. The claim made in the calculus is not that the smooth arc
-      is really composed of an infinite number of straight segments. That would
-      be a contradiction. A curve is not straight. Rather, the claim is that
-      the length of the curved arc is the limit of a sequence of sums of
-      contiguous, straight segments.  No sum of straight segments will in
-      general be equal to the length along the curve, but the limit of the
-      sequence of sums can be found.%
+      The sum of the red distances is a better approximation than the sum of
+      the blue distances. The smooth arc is not composed of an infinite number
+      of straight segments. That would be a contradiction; a curve is not
+      straight.  Rather, the \emph{length} of the curved arc is the limit of a
+      sequence of sums of distances.  No sum will in general be equal to the
+      length along the curve, but the limit of the sequence of sums can be
+      found.%
    }
    \label{fig:arc}
 \end{marginfigure}
 
-\newthought{A solution to this problem} is found in the calculus.  In physical
-space, there is a distance between any two distinct points.  The length of a
-section of a curve is the limit of the sum an ever-increasing number of
-ever-smaller distances, each between a pair of points on the curve.  In the
-limit, the section is divided into an infinite number of segments, but each
-segment has a length.  No matter how many segments there might be, each segment
-still has some length, and so the segments can be added together to produce a
-finite length.  The dimension of the addends is the dimension of the sum.
+\newthought{A solution} is found by combining calculus with the idea of the
+\emph{distance} between two points.  The length along a curve is broken down
+not into points but into ever smaller distances.  In physical space, there is a
+unique distance between any two points.  The length along a curve is defined as
+the limit of a sequence of sums.  See Figure~\ref{fig:arc}.  Each subsequent
+sum in the sequence is the sum a larger number of smaller distances.  The
+dimension of the addends is the dimension of the sum.  So long as the curve be
+\emph{smooth}, the limit of the sequence of the sums will be the length of the
+curve.  A curve is smooth if, for any two points sufficiently close together
+along the curve, the difference between their separation distance and the
+length between them along the curve is as small as desired.
 
-Similarly, a surface must be composed of bits with area, and a space must be
-composed of bits with volume.  The idea of area and the idea of volume are
-built upon the idea of length, of distance.
+Just as a length is properly composed of distances, a surface must be composed
+of areas, and a space must be composed of volumes.  In turn, the idea of area
+and the idea of volume are built upon the idea of distance.
 
 Regardless of the number of dimensions of length a space might have, it can
 support basic notions of geometry only if there be a unique \emph{distance}
 between every pair of points in the space.  A path through physical space is
-not merely a collection of points but also a rule for associating a distance
-between every pair of points on the path.
+not merely a collection of points but also a rule for associating a unique
+distance between every pair of points on the path.
 
 \section{Distance and Path}
 
