@@ -20,22 +20,13 @@
 pure location, without any extent: no length, no width, no height.  An object
 such as a curve, a surface, or a volume has points in it.
 
-There are, however, problems that can arise from imagining, say, a curve as
-\emph{merely} a collection of points.  A point has no length.  Two points could
-touch only if they were in the same location, but then they would be the same
-point.  So no two distinct points can be in contact.  There is no arrangement
-of points, lying in unbroken contact, such that they constitute a length.
-Also, in introductory physics, the student learns to involve physical dimension
-in calculation.  Two quantities cannot be added together if they differ in
-dimension, and if two quantities agree in dimension, their sum must be of the
-same dimension.\sidenote[][-1in]{%
-   For example, one cannot evaluate the sum of a distance and a mere number, as
-   in $3 \: \text{m}^2 + 2$, where ``$\text{m}$'' indicates ``meter''.  The
-   first term has the dimension of area, and the second term is dimensionless.
-   Also, the result of $2 + 5$ cannot be $7 \: \text{m}$.}
-A point has no extension in the dimension of length, and so even if two
-distinct points could touch, there is no way to add up any property in each
-point to result in a length.
+There is, however, a problem that can arise from imagining a curve (for
+example) as \emph{merely} a collection of points.  A point has no length.  Two
+points could touch only if they were in the same location, but then they would
+be the same point.  So no two distinct points can be in contact.  There is no
+arrangement of points, lying in unbroken contact, such that they constitute a
+length.  The idea of an unbroken length requires something more than a mere
+collection of points.
 
 \begin{marginfigure}
    \begin{center}
@@ -44,7 +35,7 @@ point to result in a length.
       settings.prc = false;
       size(4cm,0);
       import three;
-      real step = 3*pi/16;
+      real step = pi/4;
       triple p0 = cos(0*step)*X + sin(0*step)*Y;
       triple p1 = cos(1*step)*X + sin(1*step)*Y;
       triple p2 = cos(2*step)*X + sin(2*step)*Y;
@@ -71,17 +62,18 @@ point to result in a length.
    \label{fig:arc}
 \end{marginfigure}
 
-\newthought{A solution} is found by combining calculus with the idea of the
-\emph{distance} between two points.  The length along a curve is broken down
-not into points but into ever smaller distances.  In physical space, there is a
-unique distance between any two points.  The length along a curve is defined as
-the limit of a sequence of sums.  See Figure~\ref{fig:arc}.  Each subsequent
-sum in the sequence is the sum a larger number of smaller distances.  The
-dimension of the addends is the dimension of the sum.  So long as the curve be
-\emph{smooth}, the limit of the sequence of the sums will be the length of the
-curve.  A curve is smooth if, for any two points sufficiently close together
-along the curve, the difference between their separation distance and the
-length between them along the curve is as small as desired.
+\newthought{A solution} is found by combining integral calculus with the idea
+of the \emph{distance} between two points.  The distance between two points is
+the length of the shortest path between them.  The length along a curve is
+broken down not into points but into ever smaller distances.  The length along
+a curve is the limit of a sequence of sums, each an approximation better than
+the previous.  See Figure~\ref{fig:arc}.  Each further sum in the sequence is
+the sum of a larger number of smaller distances.  The dimension of the addends
+is the dimension of the sum.  So long as the curve be \emph{smooth}, the limit
+of the sequence of the sums is the length of the curve.  A curve is smooth if,
+for any two points sufficiently close together along the curve, the difference
+between their separation distance and the length between them along the curve
+is as small as desired.
 
 Just as a length is properly composed of distances, a surface must be composed
 of areas, and a space must be composed of volumes.  In turn, the idea of area
