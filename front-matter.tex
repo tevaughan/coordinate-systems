@@ -74,6 +74,33 @@ Dedicated to \mbox{Neil Huffaker}, whose physical approach to vector
 \cleardoublepage
 \chapter*{Prolegomenon}
 
+In the present book I work through the basics of differential geometry, at
+least in a few simple cases. I also expose ideas that Neil Huffaker introduced
+in his graduate lectures on electrodynamics at the University of Oklahoma in
+the early 1990s.  Huffaker's approach to coordinate transformations has long
+struck me as interesting enough to write up.  The material should be accessible
+to anyone who has studied calculus-based physics.
+
+The form of the book follows the style of Edward R.~Tufte and Richard Feynman
+\citep{pkg-tufte}.
+
+The title is ``Coordinate Systems in Physical Space,'' and a brief reflection
+on the choice of title provides an introduction to the material.
+
+\section{Coordinate Systems}
+
+First of all, the book is about coordinate systems.  But what does
+``coordinate'' mean?  In mathematics, a coordinate is typically a real number
+that constrains the location of a point in a \emph{manifold}.  A manifold, in
+turn, is an $n$-dimensional space that resembles Euclidean space at least in a
+small region near every point in the space.  From now on, we shall typically
+not use the word ``manifold'' but instead just use the word ``space'' to mean
+the same thing: a \emph{locally Euclidean, mathematical space}. (We shall,
+however, distinguish mathematical space from physical space below.)  A point in
+an $n$-dimensional space can be uniquely identified by an ordered set of $n$
+coordinates.  Allowing one of the coordinates to vary, while holding the others
+fixed, produces coordinates for points along a \emph{coordinate line}.
+
 \begin{marginfigure}
    \begin{center}
    \begin{asy}
@@ -93,34 +120,28 @@ Dedicated to \mbox{Neil Huffaker}, whose physical approach to vector
    \end{asy}
    \end{center}
    \caption{%
-      Every path of constant latitude on the sphere is called ``a parallel''
-      because no parallel intersects any other parallel.  Among the parallels,
-      only the equator is a great circle; that is, the parallel at zero
-      latitude is the only parallel circle centered on the center of the
-      sphere.  The equator and a northern parallel are shown.  In contrast,
-      every path of constant longitude is called ``a meridian'' and intersects
-      every other meridian, both at the north pole and at the south pole.
-      Also, every meridian is a great circle.  Two meridians are shown.%
+      Coordinate lines on the surface of a sphere. The equator and a northern
+      parallel appear in red. Two meridians appear in yellow.%
    }
    \label{fig:sphere}
 \end{marginfigure}
 
-My purposes in writing the present book are to work through the basics of
-differential geometry, at least in a few simple cases, and to expose ideas that
-Neil Huffaker introduced in his graduate lectures on electrodynamics at the
-University of Oklahoma in the early 1990s.  Huffaker's approach to coordinate
-transformations has long struck me as interesting enough to write up.  The
-material should be accessible to anyone who has studied calculus-based physics.
+For example, the surface of a sphere is a two-dimensional space.  Each of the
+latitude and the longitude is a coordinate.  By holding the latitude fixed, one
+finds that the set of longitudes maps to a parallel, a coordinate line on the
+surface of the sphere.  See Figure~\ref{fig:sphere}.  Every path of constant
+latitude on the sphere is called ``a parallel'' because no parallel intersects
+any other parallel.  Among the parallels, only the equator is a great circle;
+that is, the parallel at zero latitude is the only parallel circle centered on
+the center of the sphere.  Every path of constant longitude is called ``a
+meridian'' and intersects every other meridian, both at the north pole and at
+the south pole.  Every meridian is a great circle.
 
-The form of the book follows the style of Edward R.~Tufte and Richard Feynman
-\citep{pkg-tufte}.
-
-The title is ``Coordinate Systems in Physical Space,'' and a brief reflection
-on the choice of words provides an introduction to the material.
-
-\section{Coordinate System}
-
-A \emph{coordinate} is an element of a simply ordered set,\sidenote{%
+In my treatment, however, a coordinate is not necessarily a real number.  It
+might be an irreducibly physical quantity, like a length.  A physical quantity
+is not a number, but it can be expressed as the product of a number and a
+standard unit, such as an inch.  What is generally required is that a
+coordinate be an element of a simply ordered set,\sidenote{%
    A set $S$ is simply ordered if, for every $a, b, c \in S$,
    \begin{enumerate}
       \item $a \leq b$ and $b \leq a$ imply that $a = b$;
@@ -129,29 +150,20 @@ A \emph{coordinate} is an element of a simply ordered set,\sidenote{%
    \end{enumerate}%
 }
 which is mapped continuously and in a one-to-one way onto a path.\sidenote{%
-   A function takes every coordinate to a corresponding point on the path.  For
-   the function to be continuous, an infinitesimal change in coordinate must
-   never produce a finite change in the distance along the path between mapped
+   A function takes every coordinate to a corresponding point on the same path.
+   For the function to be continuous, an infinitesimal difference between
+   coordinates must never produce a finite distance between the corresponding
    points.  The one-to-one nature of the mapping means that for every point
    along the path, there is exactly one coordinate corresponding to it.%
 }
-This path is a \emph{coordinate line}.  In mathematics, a coordinate is
-typically a real number.  For example, on the surface of a sphere, each of the
-latitude and the longitude is a coordinate.  By holding the latitude fixed, one
-finds that the set of longitudes maps to a parallel, a coordinate line on the
-surface of the sphere.  See Figure~\ref{fig:sphere}.  In my treatment, which is
-physical and not purely mathematical, a coordinate is often not a number but a
-\emph{length}, an irreducibly physical quantity, which can be expressed as the
-product of a number and a standard unit (such as an inch).
+This path is a coordinate line.
 
-A \emph{coordinate tuple} is an ordered set of coordinates.  Below, we shall
-typically have use for no more than four coordinates in a tuple.  For example,
+A \emph{coordinate tuple} is an ordered set of coordinates.  For example,
 $(\alpha,\beta)$, where $\alpha$ is the latitude and $\beta$ the longitude, is
 a coordinate tuple identifying a point on the surface of a sphere.  A
 \emph{coordinate system} is a mapping from a set of coordinate tuples to the
-points in a space.  The number of dimensions in the space is the same as the
-number of elements in the coordinate tuple that identifies a point in the
-space.
+points in a space.  The number of dimensions in the space is the same as
+the number of elements in the coordinate tuple that identifies a point.
 
 No particular coordinate system need be chosen for a given space, and so the
 choice of coordinate system is arbitrary.  However, one coordinate system might
