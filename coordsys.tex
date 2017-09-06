@@ -17,16 +17,28 @@
 \label{ch:distance}
 
 \newthought{A point}, as introduced in high-school geometry, is a particular,
-pure location, without any extent: no length, no width, no height.  An object
-such as a curve, a surface, or a volume has points in it.
+pure location, without any \emph{extent}.  An object such as a curve, a
+surface, or a volume has points in it.
 
-There is, however, a problem that can arise from imagining a curve (for
-example) as \emph{merely} a collection of points.  A point has no length.  Two
-points could touch only if they were in the same location, but then they would
-be the same point.  So no two distinct points can be in contact.  There is no
-arrangement of points, lying in unbroken contact, such that they constitute a
-length.  The idea of an unbroken length requires something more than a mere
-collection of points.
+An extent is an unbroken \emph{length}.  What I am calling ``length'' is the
+principle of extension.  A geometric object might be extended in multiple ways,
+as in width and in height, but each of these is, in the most fundamental sense,
+a length, though each is a length in a different dimension.
+
+There is a problem that can arise from imagining a curve (for example) as
+\emph{merely} a collection of points.  A point has no length.  Two points along
+the curve could touch only if they were in the same location, but then they
+would be the same point.  So no two distinct points can be in contact.  There
+is no arrangement of points, lying in unbroken contact, such that they
+constitute a length.  The idea of an unbroken length, a continuously extended
+path, requires something more than a mere collection of points.
+
+\newthought{A solution} is found by combining integral calculus with the idea
+of the \emph{distance} between two points.  The distance between two points is
+the length of the shortest path between them.  If a distance between two points
+exist, then there exist unbroken paths between the points, and one of those
+paths has the shortest length.  The length along a curve is broken down not
+into points but into ever smaller distances.
 
 \begin{marginfigure}
    \begin{center}
@@ -62,18 +74,15 @@ collection of points.
    \label{fig:arc}
 \end{marginfigure}
 
-\newthought{A solution} is found by combining integral calculus with the idea
-of the \emph{distance} between two points.  The distance between two points is
-the length of the shortest path between them.  The length along a curve is
-broken down not into points but into ever smaller distances.  The length along
-a curve is the limit of a sequence of sums, each an approximation better than
-the previous.  See Figure~\ref{fig:arc}.  Each further sum in the sequence is
-the sum of a larger number of smaller distances.  The dimension of the addends
-is the dimension of the sum.  So long as the curve be \emph{smooth}, the limit
-of the sequence of the sums is the length of the curve.  A curve is smooth if,
-for any two points sufficiently close together along the curve, the difference
-between their separation distance and the length between them along the curve
-is as small as desired.
+\subsection{Length Along Curve}
+
+The length along a curve is the limit of a sequence of sums, each an
+approximation better than the previous.  See Figure~\ref{fig:arc}.  Each
+further sum in the sequence is the sum of a larger number of smaller distances.
+So long as the curve be \emph{smooth}, the limit of the sequence of the sums is
+the length of the curve.  A curve is smooth if, for any two points sufficiently
+close together along the curve, the difference between their separation
+distance and the length between them along the curve is as small as desired.
 
 Just as a length is properly composed of distances, a surface must be composed
 of areas, and a space must be composed of volumes.  In turn, the idea of area
@@ -83,9 +92,8 @@ Regardless of the number of dimensions of length a space might have, it can
 support basic notions of geometry only if there be a unique \emph{distance}
 between every pair of points in the space.  A path through physical space is
 not merely a collection of points but also a rule for associating a unique
-distance between every pair of points on the path.
-
-\section{Distance and Path}
+distance between every pair of points on the path.  The idea of distance is the
+principle of a continuous, unbroken path.
 
 \section{Geodesic}
 
