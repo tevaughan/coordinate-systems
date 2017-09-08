@@ -1,11 +1,15 @@
 
 LATEX_SRC =\
  coordsys.tex\
- preamble.tex\
+ fdl-1.3.tex\
  front-matter.tex\
- fdl-1.3.tex
+ preamble.tex\
+ title.tex
 
-coordsys.pdf : $(LATEX_SRC)
+%.pdf : %.fig
+	fig2dev -L pdf $< > $@
+
+coordsys.pdf : $(LATEX_SRC) logo.pdf
 	pdflatex coordsys
 	bibtex coordsys
 	makeindex coordsys.idx
@@ -30,6 +34,7 @@ clean :
 	@rm -fv *.ind
 	@rm -fv *.lof
 	@rm -fv *.log
+	@rm -fv logo.pdf
 	@rm -fv *.lot
 	@rm -fv *.out
 	@rm -fv *.out
