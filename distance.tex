@@ -74,31 +74,34 @@ points and that one of those paths has the shortest length.
 
 The length along a curve is the limit of a sequence of sums, each an
 approximation better than the previous.  See Figure~\ref{fig:arc}.  The length
-along a curved path in the Euclidean plane is the limit of a sequence of
-approximate sums.  The sum of the red distances is an approximation better than
-the sum of the blue distances.  The \emph{smooth} arc is not composed of (an
-infinite number of) straight segments.  That would be a contradiction; the
-curve has no straight parts.  Rather, the \emph{length} of the curved arc is
-the limit of a sequence of sums of distances.  No sum will in general be equal
-to the length along the curve, but the limit of the sequence of sums can be
-found.  Each further sum in the sequence is the sum of a larger number of
-smaller distances.  So long as the curve be smooth, the limit of the sequence
-of the sums is the length of the curve.  A curve is smooth if, for any two
-points sufficiently close together along the curve, the difference between
-\begin{itemize}[noitemsep]
-   \item their separation distance and
-   \item the length between them along the curve
-\end{itemize}
-is so small as desired.\footnote{%
-   The limit for the length exists so long as the curve be \emph{piece-wise
-   smooth}.  That is, so long as the curve be continuous and consist of
-   contiguous sections, each of finite length.%
+along the arc in the Euclidean plane is the limit of a sequence of approximate
+sums.  The sum of the red distances is an approximation better than the sum of
+the blue distances.  The \emph{smooth} arc\footnote{%
+   A curve is smooth if, for any two points sufficiently close together along
+   the curve, the difference between
+   \begin{itemize}[noitemsep]
+      \item their separation distance and
+      \item the length between them along the curve
+   \end{itemize}
+   is so small as desired.%
+}
+is not composed of any straight paths.  Rather, the \emph{length} of the curved
+arc is the limit of a sequence of sums of straight-path distances.  No finite
+sum of straight-path distances between points along the arc is equal to the
+length of the arc, but the limit of the sequence of sums can be found.  Each
+further sum in the sequence is the sum of a larger number of smaller distances.
+So long as the curve be smooth, the limit of the sequence of the sums is the
+length of the curve.\footnote{%
+   The limit for the length of a curved path exists so long as the curve be
+   \emph{piece-wise smooth}.  That is, so long as the curve be continuous and
+   consist of contiguous sections, each of finite length.%
 }
 
 \section{Principle of Extension}
 
-Just as any length is properly composed of distances, a surface is composed of
-areas, and a space is composed of volumes.  In turn, the idea of area and the
+Any length is either a sum of distances or the limit of a sequence of such
+sums. A surface area, too, ultimately depends on distance because it is a
+product of lengths.  So, too, for a volume of space.  The idea of area and the
 idea of volume are built upon the idea of length and therefore, ultimately,
 upon the idea of distance.
 
@@ -126,7 +129,7 @@ distance.\footnote{%
    there is also, somehow associated with the definition of the points, the
    idea of a \emph{distance} between every pair of points.%
 }
-In general, this idea is precisely what enables integral calculus to work.
+This idea is what enables integral calculus to work.
 
 \section{Geodesic}
 
