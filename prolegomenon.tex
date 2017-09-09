@@ -1,0 +1,204 @@
+
+% vim: set tw=79 sw=3 expandtab:
+
+\chapter{Prolegomenon}
+
+In the present book I work through the basics of differential geometry.  Also,
+for coordinate systems and component transformations in Euclidean space, I
+develop an approach that explicitly treats a certain kind of vector---for
+example, one that might be chosen as a basis vector---as simple and independent
+of any coordinate system.  This is inspired by ideas that Neil Huffaker
+introduced in his graduate lectures on electrodynamics at the University of
+Oklahoma in the early 1990s.  The material should be accessible to anyone who
+has studied calculus-based physics.
+
+The title is ``Coordinate Systems in Physical Space,'' and a brief reflection
+on the choice of title provides an introduction to the material.
+
+\section{Coordinate Systems}
+
+First of all, the book is about coordinate systems.  But what does
+``coordinate'' mean?
+
+\subsection{Coordinate}
+
+In mathematics, a coordinate is typically a real number that constrains the
+location of a point in a \emph{manifold}.  A manifold, in turn, is an
+$n$-dimensional space that resembles Euclidean space at least in a small region
+near every point in the space.\footnote{%
+   We shall typically consider cases in which $n \in \{1, 2, 3, 4\}$.%
+}
+From now on, we shall not use the word ``manifold'' but instead just use the
+word ``space'' to mean the same thing: a \emph{locally Euclidean, mathematical
+space}.  (We shall below, however, distinguish a mathematical space from a
+physical space.)
+
+\subsection{Coordinate Tuple and Coordinate System}
+
+A point in an $n$-dimensional space is uniquely identified by an $n$-tuple, an
+ordered set of $n$ coordinates.  A \emph{coordinate system} is a continuous,
+one-to-one map from the set of coordinate $n$-tuples onto the points in the
+space.\footnote{%
+   Continuity implies that an infinitesimal change in any coordinate must never
+   change the mapped point by a finite distance.  The one-to-one nature means
+   that for every point in the space, there is exactly one tuple corresponding
+   to it.%
+}
+Suppose that the first coordinate in the tuple is $x_1$, and the last is $x_n$.
+Then we can specify any coordinate as $x_i$, where $i \in \{1, 2, 3, \ldots,
+n\}$.
+
+\subsection{Coordinate Line}
+
+Allowing the $i$th coordinate to vary, while holding every other coordinate at
+fixed value, produces tuples for points along a \emph{coordinate line} for the
+$i$th coordinate.
+
+For example, the surface of a sphere is a two-dimensional space.  Each of the
+latitude and the longitude is a coordinate.  These coordinates form a
+two-tuple, or ordered pair, $(\alpha,\beta)$, where $\alpha$ is the latitude
+($-\frac{\pi}{2} \leq \alpha \leq +\frac{\pi}{2}$) and $\beta$ the longitude
+($-\pi \leq \beta < +\pi$).
+\begin{figure}
+   \begin{center}
+   \begin{asy}
+      defaultpen(fontsize(8pt));
+      settings.prc = false;
+      size(8cm,0);
+      import three;
+      draw(unitsphere, white);
+      path3 equator = circle(c=O, r=1.001, normal=Z);
+      path3 par     = circle(c=O+1/sqrt(2)*Z, r=1/sqrt(2)+0.001, normal=Z);
+      path3 prime   = circle(c=O, r=1.001, normal=X);
+      path3 mer     = circle(c=O, r=1.001, normal=cos(30)*X+sin(30)*Y);
+      draw(equator, red);
+      draw(par, red);
+      draw(prime, yellow);
+      draw(mer, yellow);
+   \end{asy}
+   \end{center}
+   \caption{Coordinate lines on the surface of a sphere.}
+   \label{fig:sphere}
+\end{figure}
+See Figure~\ref{fig:sphere}.  By holding the latitude fixed, one finds that the
+set of longitudes maps to a parallel, a coordinate line for the longitude, on
+the surface of the sphere.  Every path of constant latitude on the sphere is
+called ``a parallel'' because no parallel intersects any other parallel.  Among
+the parallels, only the equator is a great circle; that is, the parallel at
+zero latitude is the only parallel circle centered on the center of the sphere.
+In the figure, the equator and a northern parallel appear in red.  Every path
+of constant longitude---that is, every coordinate line for the latitude---is
+called ``a meridian'' and intersects every other meridian, both at the north
+pole and at the south pole.  Every meridian is a great circle.  In the figure,
+two meridians appear in yellow.
+
+
+\subsection{Value of Coordinate}
+
+In my treatment, a coordinate is not necessarily a real number.  It might
+instead be an irreducibly physical quantity, like a length.  A physical
+quantity is not a number, but it can be expressed as the product of a number
+and a standard unit, such as an inch.  What is generally required is that a
+coordinate be an element of a simply ordered set.\footnote{%
+   A set $S$ is simply ordered if, for every $a, b, c \in S$,
+   \begin{itemize}[noitemsep]
+      \item $a \leq b$ and $b \leq a$ imply that $a = b$;
+      \item $a \leq b$ and $b \leq c$ imply that $a \leq c$; and
+      \item either $a \leq b$ or $b \leq a$.
+   \end{itemize}%
+}
+The real numbers are simply ordered, and so is the set of all lengths of the
+form, $x = r \; \text{in}$, where $r$ is a real number, and ``$\text{in}$''
+represents an inch.
+
+\subsection{Arbitrary Choice of Coordinate System}
+
+No particular coordinate system need be chosen for a given space, and so the
+choice of coordinate system is arbitrary.  However, one coordinate system might
+fit a space more naturally than another would fit it.  For example, the most
+natural coordinate systems on the surface of an oblate
+spheroid\footnote{%
+   There is no preferred orientation for a grid of latitude and longitude on a
+   perfect sphere.  An oblate spheroid is obtained by a scaling transformation
+   that reduces the size of the sphere along a single direction.  The shape of
+   the Earth is approximated by an oblate spheroid better than by a perfect
+   sphere.%
+}
+would have the equator on the longest circumference of the spheroid.
+
+\subsection{Cartesian Coordinate System}
+
+There is a special kind of coordinate system, a \emph{Cartesian} coordinate
+system.  In a Cartesian coordinate system, the shortest path between every pair
+of points on every coordinate line lies on that coordinate line.  Not every
+space admits a Cartesian coordinate system.  For example, the surface of a
+sphere does not admit a Cartesian coordinate system.\footnote{%
+   On the surface of the sphere, the shortest path between two distinct points
+   along a parallel usually does not lie along the parallel.  The shortest path
+   always lies along a great circle, and, except for the equator, a parallel is
+   not a great circle.%
+}
+In fact, only a \emph{Euclidean} space admits a Cartesian coordinate system.
+We shall see that what makes a Euclidean space special is that it has zero
+\emph{curvature}.
+
+\subsection{Transformation of Coordinate System}
+
+We shall spend some time discussing the difference between a quantity that
+depends on the choice of coordinate system and a quantity that does not depend
+on the choice.  For a quantity that does depend on the coordinate system, we
+shall explore, particularly for Cartesian coordinates, the different ways in
+which a quantity can transform as the coordinate system changes.
+
+\section{Physical Space}
+
+A mathematical model of physical space is not physical space itself.  A model,
+such as Euclidean space or the space-time of general relativity, is an abstract
+thing in the mind.  Physical space is the space of direct, sensory experience.
+Euclidean space is often a good model of physical space, but not always.  Each
+of the models that I develop makes explicit what might be only implicit in a
+standard mathematical treatment of space.  I do this so that each model, while
+still essentially abstract, is concrete enough to be falsifiable like a
+scientific theory and so that the model accords well with physical intuition.
+
+\subsection{Explicit Principles}
+
+Each of the models that I develop is based on two key principles.
+
+First, a distance is not reduced to a number; rather, distance remains an
+intuitive, undefined, physical, non-numeric quantity, expressed in terms of a
+fundamental unit, such as the inch or the meter.  Nevertheless, a distance can
+be multiplied by a number.
+
+Second, neither a point in space nor a displacement vector between two points
+is reduced to a tuple of quantities.  Rather, each of the point and the
+displacement vector is regarded as both simple\footnote{%
+   What is simple is not composed of parts; that is, not complex.  A tuple of
+   coordinates is complex in that it has parts (coordinates).  A coordinate
+   system maps a tuple to a point in space, but the point has no parts.  The
+   point is simply a location.%
+}
+and logically prior to any coordinate system.
+
+\subsection{Euclidean and Non-Euclidean Models}
+
+As a global physical hypothesis, Euclidean geometry has been ruled out by
+experiment.\footnote{%
+   Experiments in lunar ranging from the surface of the Earth and data from the
+   spacecraft, Gravity Probe B, have directly and repeatably measured the
+   curvature of space near the Earth. The results are inconsistent with
+   Euclidean physical space.  \citep{gpb-2011, miller-geodetic}
+}
+However, even in the non-Euclidean geometries of modern physics, the Euclidean
+ideal is a better and better approximation as the size of the region of space
+under consideration becomes smaller and smaller.  While Euclidean geometry as a
+physical hypothesis applied globally has been ruled out, Euclidean geometry as
+applied separately to every sufficiently small region of physical space has not
+been ruled out.  In fact, the space of general relativity, which has not (yet)
+been ruled out, is called ``a locally Euclidean space.''
+
+Anyway, most of the narrative of the book is set in the practically Euclidean,
+three-dimensional space of ordinary experience, but the non-Euclidean,
+two-dimensional space of the surface of the sphere is also explored.  Also, we
+shall at least briefly discuss both special relativity and general relativity.
+

@@ -1,0 +1,132 @@
+
+% vim: set tw=79 sw=3 expandtab:
+
+\chapter{Distance}
+\label{ch:distance}
+
+A point, as introduced in high-school geometry, is a particular, pure location,
+without any \emph{extent}.  An object such as
+\begin{itemize}[noitemsep]
+   \item a curve (a one-dimensional space),
+   \item a surface (a two-dimensional space),
+   \item a proper space (a three-dimensional space), or
+   \item a hyperspace (a space with four or more dimensions)
+\end{itemize}
+has points in it.
+
+An extent is an unbroken \emph{length} corresponding to a thing's size.  What I
+call ``length'' is the principle of extension.  A geometric object might be
+extended in multiple ways, as in width and in height.  Each of the width and
+the height is fundamentally a length, though each is a length in a different
+dimension.  For example, consider a 180-degree, circular arc of one-meter
+radius in the Euclidean plane.  There is a length along the arc.  The arc also
+has some extension in each of the two dimensions of the plane.
+\begin{figure}
+   \begin{center}
+   \begin{asy}
+      defaultpen(fontsize(8pt));
+      settings.prc = false;
+      size(8cm,0);
+      import three;
+      real step = pi/12;
+      triple p00 = cos( 0*step)*X + sin( 0*step)*Y;
+      triple p01 = cos( 1*step)*X + sin( 1*step)*Y;
+      triple p02 = cos( 2*step)*X + sin( 2*step)*Y;
+      triple p03 = cos( 3*step)*X + sin( 3*step)*Y;
+      triple p04 = cos( 4*step)*X + sin( 4*step)*Y;
+      triple p05 = cos( 5*step)*X + sin( 5*step)*Y;
+      triple p06 = cos( 6*step)*X + sin( 6*step)*Y;
+      triple p07 = cos( 7*step)*X + sin( 7*step)*Y;
+      triple p08 = cos( 8*step)*X + sin( 8*step)*Y;
+      triple p09 = cos( 9*step)*X + sin( 9*step)*Y;
+      triple p10 = cos(10*step)*X + sin(10*step)*Y;
+      triple p11 = cos(11*step)*X + sin(11*step)*Y;
+      triple p12 = cos(12*step)*X + sin(12*step)*Y;
+      path3 a = arc(c=O, v1=p00, v2=p12);
+      currentprojection=orthographic(camera=Z);
+      draw(a);
+      draw(p00--p06--p12, blue);
+      draw(p00--p04--p08--p12, magenta);
+      draw(p00--p03--p06--p09--p12, darkgreen);
+      draw(p00--p02--p04--p06--p08--p10--p12, red);
+   \end{asy}
+   \end{center}
+   \caption{An arc and approximations to its length.}
+   \label{fig:arc}
+\end{figure}
+See Figure~\ref{fig:arc}.
+
+\section{Shortest Path}
+
+Between any two points in a space, there is a special length called a
+\emph{distance}; contained in this idea is, as it turns out, most of what we
+mean by ``space.'' The distance between any two points in a space is the length
+of the shortest path between them.
+
+For a one-dimensional space, the existence of a distance between every pair of
+points implies that the space itself is a single, unbroken extent.
+
+For a space of two or more dimensions, however, a distance between every pair
+of points implies that there are infinitely many unbroken paths between the two
+points and that one of those paths has the shortest length.
+
+\subsection{Length Along Curve}
+
+The length along a curve is the limit of a sequence of sums, each an
+approximation better than the previous.  See Figure~\ref{fig:arc}.  The length
+along a curved path in the Euclidean plane is the limit of a sequence of
+approximate sums.  The sum of the red distances is an approximation better than
+the sum of the blue distances.  The \emph{smooth} arc is not composed of (an
+infinite number of) straight segments.  That would be a contradiction; the
+curve has no straight parts.  Rather, the \emph{length} of the curved arc is
+the limit of a sequence of sums of distances.  No sum will in general be equal
+to the length along the curve, but the limit of the sequence of sums can be
+found.  Each further sum in the sequence is the sum of a larger number of
+smaller distances.  So long as the curve be smooth, the limit of the sequence
+of the sums is the length of the curve.  A curve is smooth if, for any two
+points sufficiently close together along the curve, the difference between
+\begin{itemize}[noitemsep]
+   \item their separation distance and
+   \item the length between them along the curve
+\end{itemize}
+is so small as desired.\footnote{%
+   The limit for the length exists so long as the curve be \emph{piece-wise
+   smooth}.  That is, so long as the curve be continuous and consist of
+   contiguous sections, each of finite length.%
+}
+
+\section{Principle of Extension}
+
+Just as any length is properly composed of distances, a surface is composed of
+areas, and a space is composed of volumes.  In turn, the idea of area and the
+idea of volume are built upon the idea of length and therefore, ultimately,
+upon the idea of distance.
+
+Regardless of the number of dimensions a space might have, it can support the
+basic notion of extended geometry only if there be a unique \emph{distance}
+between every pair of points in the space.  A path of definite length is not
+merely a collection of points but also a rule for associating a unique distance
+between every pair of points on the path.  The idea of distance is the
+principle of continuous, unbroken geometry.  A continuous length is properly
+divided not into points but rather into infinitesimal, contiguous elements of
+distance.\footnote{%
+   There is a problem that can arise from imagining a curve (for example) as
+   \emph{merely} a collection of points.  Because a point has no length, no
+   point can touch another point.  Regardless of how close together two points
+   might be, each has zero length, and so there is a gap between them.  Because
+   no point can touch another point, there is no arrangement of points, lying
+   in unbroken contact, such that they constitute a length.  The idea of an
+   unbroken length, a continuously extended path, is more fundamental than the
+   idea of a point:  A point is a pure location \emph{in} or \emph{on}
+   something, such as a curve, a surface, or proper space.  That thing must
+   exist first, in order for there then to be points identified on it, and it
+   must define what the distance between a pair of points is.  Beginning in the
+   20th Century, a geometric object has often been considered as essentially a
+   collection of points.  This can be reasonable only if one remember that
+   there is also, somehow associated with the definition of the points, the
+   idea of a \emph{distance} between every pair of points.%
+}
+In general, this idea is precisely what enables integral calculus to work.
+
+\section{Geodesic}
+

@@ -4,7 +4,7 @@
 % Prints an epigraph and speaker in sans serif, all-caps type.
 \newcommand{\openepigraph}[2]{%
   {
-  \sffamily\large
+  \sffamily
   \noindent\textit{#1} % epigraph
   \ \\%
   \ \\%
@@ -12,27 +12,28 @@
   }
 }
 
-% Generates the index
-\usepackage{makeidx}
-\makeindex
 
 \usepackage{amsmath} % Allow use of $\text{}$.
 \usepackage{amsthm} % theorem
 \usepackage{amsfonts}
+\usepackage[rgb]{xcolor} % might need loading before asymptote
+\usepackage{asymptote} % figures
 \usepackage[greek,english]{babel} % language selection
 \usepackage{booktabs} % \toprule, \midrule, \bottomrule
 \usepackage[margin=10pt,font={sl},labelfont=bf]{caption} % figure captions
+\usepackage{enumitem} % for compact list with [noitemsep]
 \usepackage{fancyhdr}
 \usepackage{framed} % environment for framed box
 \usepackage{graphicx}
+\usepackage{makeidx}
 \usepackage{natbib}
-\usepackage[rgb]{xcolor} % might need loading before asymptote
-\usepackage{asymptote} % figures
 \usepackage{times}
 \usepackage{vmargin}
 
-% must be last
+% Must be last.
 \usepackage[colorlinks=true,citecolor=blue,hyperfootnotes=false]{hyperref}
+
+\makeindex % Generate the index.
 
 % uncomment if you prefer colored hyperlinks (e.g., for onscreen viewing)
 \hypersetup{colorlinks}

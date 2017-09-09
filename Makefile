@@ -9,7 +9,7 @@ LATEX_SRC =\
 %.pdf : %.fig
 	fig2dev -L pdf $< > $@
 
-coordsys.pdf : $(LATEX_SRC) logo.pdf
+coordsys.pdf : *.tex logo.pdf
 	pdflatex coordsys
 	bibtex coordsys
 	makeindex coordsys.idx
