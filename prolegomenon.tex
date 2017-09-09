@@ -3,14 +3,14 @@
 
 \chapter{Prolegomenon}
 
-In the present book I work through the basics of differential geometry.  Also,
-for coordinate systems and component transformations in Euclidean space, I
-develop an approach that explicitly treats a certain kind of vector---for
-example, one that might be chosen as a basis vector---as simple and independent
-of any coordinate system.  This is inspired by ideas that Neil Huffaker
-introduced in his graduate lectures on electrodynamics at the University of
-Oklahoma in the early 1990s.  The material should be accessible to anyone who
-has studied calculus-based physics.
+In the present book I work through some of the basics of differential geometry.
+Also, for coordinate systems and component transformations in Euclidean space,
+I develop an approach that explicitly treats a certain kind of vector---for
+example, a displacement vector---as simple and independent of any coordinate
+system.  This is inspired by ideas that Neil Huffaker introduced in his
+graduate lectures on electrodynamics at the University of Oklahoma in the early
+1990s.  The material should be accessible to anyone who has studied
+calculus-based physics.
 
 The title is ``Coordinate Systems in Physical Space,'' and a brief reflection
 on the choice of title provides an introduction to the material.
@@ -23,9 +23,9 @@ First of all, the book is about coordinate systems.  But what does
 \subsection{Coordinate}
 
 In mathematics, a coordinate is typically a real number that constrains the
-location of a point in a \emph{manifold}.  A manifold, in turn, is an
-$n$-dimensional space that resembles Euclidean space at least in a small region
-near every point in the space.\footnote{%
+location of a point in a \emph{manifold}.  A manifold is an $n$-dimensional
+space, every sufficiently small region of which resembles Euclidean space so
+well as desired.\footnote{%
    We shall typically consider cases in which $n \in \{1, 2, 3, 4\}$.%
 }
 From now on, we shall not use the word ``manifold'' but instead just use the
@@ -35,18 +35,18 @@ physical space.)
 
 \subsection{Coordinate Tuple and Coordinate System}
 
-A point in an $n$-dimensional space is uniquely identified by an $n$-tuple, an
-ordered set of $n$ coordinates.  A \emph{coordinate system} is a continuous,
-one-to-one map from the set of coordinate $n$-tuples onto the points in the
-space.\footnote{%
+A point in an $n$-dimensional space can be uniquely identified by a
+\emph{tuple}, or ordered set, of $n$ coordinates; that is, a coordinate
+$n$-tuple.  A \emph{coordinate system} is a continuous, one-to-one map from the
+set of coordinate $n$-tuples onto the points in the space.\footnote{%
    Continuity implies that an infinitesimal change in any coordinate must never
    change the mapped point by a finite distance.  The one-to-one nature means
    that for every point in the space, there is exactly one tuple corresponding
    to it.%
 }
-Suppose that the first coordinate in the tuple is $x_1$, and the last is $x_n$.
-Then we can specify any coordinate as $x_i$, where $i \in \{1, 2, 3, \ldots,
-n\}$.
+Suppose that the first coordinate in the tuple $(x_1, \ldots, x_n)$ is $x_1$,
+and the last is $x_n$.  Then we can specify any coordinate as $x_i$, where $i
+\in \{1, 2, 3, \ldots, n\}$.
 
 \subsection{Coordinate Line}
 
@@ -80,18 +80,21 @@ two-tuple, or ordered pair, $(\alpha,\beta)$, where $\alpha$ is the latitude
    \caption{Coordinate lines on the surface of a sphere.}
    \label{fig:sphere}
 \end{figure}
-See Figure~\ref{fig:sphere}.  By holding the latitude fixed, one finds that the
-set of longitudes maps to a parallel, a coordinate line for the longitude, on
-the surface of the sphere.  Every path of constant latitude on the sphere is
-called ``a parallel'' because no parallel intersects any other parallel.  Among
-the parallels, only the equator is a great circle; that is, the parallel at
-zero latitude is the only parallel circle centered on the center of the sphere.
-In the figure, the equator and a northern parallel appear in red.  Every path
-of constant longitude---that is, every coordinate line for the latitude---is
-called ``a meridian'' and intersects every other meridian, both at the north
-pole and at the south pole.  Every meridian is a great circle.  In the figure,
-two meridians appear in yellow.
-
+See Figure~\ref{fig:sphere}.
+\begin{itemize}
+   \item By holding the latitude fixed, one finds that the set of longitudes
+      maps to a parallel, a coordinate line for the longitude, on the surface
+      of the sphere.  Every path of constant latitude on the sphere is called
+      ``a parallel'' because no parallel intersects any other parallel.  Among
+      the parallels, only the equator is a great circle; that is, the parallel
+      at zero latitude is the only parallel circle centered on the center of
+      the sphere.  In the figure, the equator and a northern parallel appear in
+      red.
+   \item Every path of constant longitude---that is, every coordinate line for
+      the latitude---is called ``a meridian'' and intersects every other
+      meridian, both at the north pole and at the south pole.  Every meridian
+      is a great circle.  In the figure, two meridians appear in yellow.
+\end{itemize}
 
 \subsection{Value of Coordinate}
 
