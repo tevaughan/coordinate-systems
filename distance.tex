@@ -45,10 +45,10 @@ has some extension in each of the two dimensions of the plane.
       path3 a = arc(c=O, v1=p00, v2=p12);
       currentprojection=orthographic(camera=Z);
       draw(a);
-      draw(p00--p06--p12, blue);
-      draw(p00--p04--p08--p12, magenta);
-      draw(p00--p03--p06--p09--p12, darkgreen);
-      draw(p00--p02--p04--p06--p08--p10--p12, red);
+      draw(p00--p06--p12, blue+linetype(new real[]{8,8,1,8}));
+      draw(p00--p04--p08--p12, magenta+linetype(new real[]{8,8}));
+      draw(p00--p03--p06--p09--p12, darkgreen+linetype(new real[]{4,4,1,4}));
+      draw(p00--p02--p04--p06--p08--p10--p12, red+linetype(new real[]{4,4}));
    \end{asy}
    \end{center}
    \caption{An arc and approximations to its length.}
