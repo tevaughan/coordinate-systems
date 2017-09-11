@@ -26,29 +26,30 @@ has some extension in each of the two dimensions of the plane.
    \begin{asy}
       defaultpen(fontsize(8pt));
       settings.prc = false;
-      size(8cm,0);
+      size(9.5cm,0);
       import three;
-      real step = pi/12;
-      triple p00 = cos( 0*step)*X + sin( 0*step)*Y;
-      triple p01 = cos( 1*step)*X + sin( 1*step)*Y;
-      triple p02 = cos( 2*step)*X + sin( 2*step)*Y;
-      triple p03 = cos( 3*step)*X + sin( 3*step)*Y;
-      triple p04 = cos( 4*step)*X + sin( 4*step)*Y;
-      triple p05 = cos( 5*step)*X + sin( 5*step)*Y;
-      triple p06 = cos( 6*step)*X + sin( 6*step)*Y;
-      triple p07 = cos( 7*step)*X + sin( 7*step)*Y;
-      triple p08 = cos( 8*step)*X + sin( 8*step)*Y;
-      triple p09 = cos( 9*step)*X + sin( 9*step)*Y;
-      triple p10 = cos(10*step)*X + sin(10*step)*Y;
-      triple p11 = cos(11*step)*X + sin(11*step)*Y;
-      triple p12 = cos(12*step)*X + sin(12*step)*Y;
-      path3 a = arc(c=O, v1=p00, v2=p12);
+      real step  = pi/12;
+      real phase = pi/6;
+      real yoff  = sin(0*step + phase);
+      triple p00 = cos(0*step + phase)*X + (sin(0*step + phase) - yoff)*Y;
+      triple p01 = cos(1*step + phase)*X + (sin(1*step + phase) - yoff)*Y;
+      triple p02 = cos(2*step + phase)*X + (sin(2*step + phase) - yoff)*Y;
+      triple p03 = cos(3*step + phase)*X + (sin(3*step + phase) - yoff)*Y;
+      triple p04 = cos(4*step + phase)*X + (sin(4*step + phase) - yoff)*Y;
+      triple p05 = cos(5*step + phase)*X + (sin(5*step + phase) - yoff)*Y;
+      triple p06 = cos(6*step + phase)*X + (sin(6*step + phase) - yoff)*Y;
+      triple p07 = cos(7*step + phase)*X + (sin(7*step + phase) - yoff)*Y;
+      triple p08 = cos(8*step + phase)*X + (sin(8*step + phase) - yoff)*Y;
       currentprojection=orthographic(camera=Z);
-      draw(a);
-      draw(p00--p06--p12, blue+linetype(new real[]{8,8,1,8}));
-      draw(p00--p04--p08--p12, magenta+linetype(new real[]{8,8}));
-      draw(p00--p03--p06--p09--p12, darkgreen+linetype(new real[]{4,4,1,4}));
-      draw(p00--p02--p04--p06--p08--p10--p12, red+linetype(new real[]{4,4}));
+      // ".." indicates bezier curve.
+      path3 a = p00..p01..p02..p03..p04..p05..p06..p07..p08;
+      draw(a, gray);
+      pen b8818 = blue  + linetype(new real[]{8,8,1,8});
+      pen g4414 = green + linetype(new real[]{4,4,1,4});
+      pen r2212 = red   + linetype(new real[]{2,2,1,2});
+      draw(p00--p04--p08, b8818);
+      draw(p00--p02--p04--p06--p08, g4414);
+      draw(p00--p01--p02--p03--p04--p05--p06--p07--p08, r2212);
    \end{asy}
    \end{center}
    \caption{An arc and approximations to its length.}
