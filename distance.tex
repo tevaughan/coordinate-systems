@@ -15,14 +15,10 @@ A point, as introduced in high-school geometry, is a pure location, without any
 has points in it.  Within each kind of space, one can conceive of an
 \emph{extended} object, an object that has extent along at least one dimension.
 For example, a segment in a one-dimensional space, a triangle in a
-two-dimensional space, or a cube in a three-dimensional space.  Any extended
-object will have within it some of the points that are in the space occupied by
-the object.  Yet because a point has no extent, an extended object does not
-have its extension by virtue of the points themselves.  Rather, extension is
-defined as a relationship between points.
+two-dimensional space, or a cube in a three-dimensional space.
 
-An extent is an unbroken \emph{length} corresponding to a thing's size.  What I
-call ``length'' is the principle of extension.  A geometric object might be
+An extent is an unbroken \emph{length} corresponding to a thing's size.  What
+we call ``length'' is the principle of extension.  A geometric object might be
 extended in multiple ways, as in width and in height.  Each of the width and
 the height is fundamentally a length, though each is a length in a different
 dimension.  For example, consider a $120^\circ$~circular arc in the Euclidean
@@ -65,6 +61,11 @@ plane, the arc has extension in two dimensions.
 \end{figure}
 See Figure~\ref{fig:arc}.
 
+Any extended object will have within it some of the points that are in the
+space containing the object.  Yet because a point has no extent, an extended
+object does not have its extension by virtue of the points themselves.  Rather,
+extension is defined as a relationship between points.
+
 \section{Shortest Path}
 
 Between any two points in a space, there is a special length called a
@@ -72,47 +73,64 @@ Between any two points in a space, there is a special length called a
 mean by ``space.'' The distance between any two points in a space is the length
 of the shortest path between them.
 
-For a one-dimensional space, the existence of a distance between every pair of
-points implies that the space itself is a single, unbroken extent.
+For a one-dimensional space, the existence of a shortest length between any
+pair of points implies that the space itself is a single, unbroken extent.
 
-For a space of two or more dimensions, however, a distance between every pair
-of points implies that there are infinitely many unbroken paths between the two
-points and that one of those paths has the shortest length.
+For a space of two or more dimensions, however, the assertion of a distance
+between any pair of points implies that there are infinitely many unbroken
+paths between the two points and that one of those paths has the shortest
+length.
 
 \section{Length Along Path}
 
-The length along a path is the limit of a sequence of sums, each an
-approximation better than the previous.  In Figure~\ref{fig:arc}, the length
-along the arc in the Euclidean plane is the limit of a sequence of approximate
-sums.  The sum of the red distances is an approximation better than the sum of
-the blue distances.  The \emph{smooth} arc\footnote{%
+The length along a curved path is the \emph{limit} of a sequence of sums.
+
+In order to find the first sum in the sequence, suppose that, in addition to
+the point at the beginning of the path and the point at the end of the path, we
+pick a collection of points along the path so that the distance between one
+point and the next in the collection is the same for every point.  Starting at
+one end of the path, we can add up the distance from one point to the next
+until we arrive at the other end of the path.  Because the distance between one
+point and the next corresponds to the shortest length between them, the sum of
+the distances will be less than the length along the path if the path be
+curved.  See, for example, the blue, dot-dashed segments in
+Figure~\ref{fig:arc}.
+
+We find the second sum by picking, for each pair of consecutive points in the
+first collection, a new point along the path between them and equidistant from
+them.  Thus augmenting our collection of points, we again start at one end of
+the path and add up the distance from one point to the next until we arrive at
+the other end of the path.  See the green segments in Figure~\ref{fig:arc}.
+
+If the path be \emph{smooth}\footnote{%
    A path is smooth if, for any two points sufficiently close together along
-   the path, the difference $\lambda - d$ between
+   the path, the fractional difference $\frac{\lambda - d}{\lambda}$ between
    \begin{itemize}[noitemsep]
       \item the length $\lambda$ along the path between the points and
       \item their separation distance $d$
    \end{itemize}
    can be made so close to zero as desired.%
 }
-is not composed of any straight paths.  Rather, the \emph{length} of the arc is
-the limit of a sequence of sums of straight-path distances.  No finite sum of
-straight-path distances between points along the arc is equal to the length of
-the arc, but the limit of the sequence of sums can be found.  Each further sum
-in the sequence is the sum of a larger number of smaller distances.  So long as
-the path be smooth, the limit of the sequence of the sums is the length of the
-path.\footnote{%
-   The limit for the length of a curved path exists so long as the path be
-   \emph{piece-wise smooth}.  That is, so long as the path be continuous and
-   consist of contiguous sections, each of finite length.%
+and not straight, then, continuing to augment our collection of points as we
+have done above, we find that the sum at every stage increases, but the
+sequence of sums approaches a fixed upper limit $L$.  Regardless of how many
+sums we generate, the last sum is always less than the limit, but, for any
+length $\ell$ smaller than $L$---even if $L - \ell$ be so tiny as we might
+imagine---we can always keep augmenting our collection until the sum is greater
+than $\ell$.  Therefore, the limit $L$ is the least upper bound of the sequence
+of sums and in fact the length along the path.\footnote{%
+   The existence of the limit does not require that the curved path be regarded
+   as composed of a large number of straight segments. In fact, the limit is a
+   length greater than that of any approximating collection of straight paths.
+   Yet the limit exists and is computable for any shape of smooth curve.%
 }
 
 \section{Principle of Extension}
 
 Any length is either a sum of distances or the limit of a sequence of such
-sums. A surface area, too, ultimately depends on distance because it is a
-product of lengths.  So, too, for a volume of space.  The idea of area and the
-idea of volume are built upon the idea of length and therefore, ultimately,
-upon the idea of distance.
+sums. A surface area, too, or a volume ultimately depends on distance because
+it is a product of lengths.  The idea of area and the idea of volume are built
+upon the idea of length and therefore, ultimately, upon the idea of distance.
 
 Regardless of the number of dimensions a space might have, it can support the
 basic notion of extended geometry only if there be a unique \emph{distance}
